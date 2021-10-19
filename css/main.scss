@@ -5,6 +5,10 @@
 @import 'rulesModal';
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
+:root {
+    --app-height: 100%;
+}
+
 *{
     user-select: none;
 }
@@ -30,7 +34,7 @@ html{
 }
 
 body{
-    @include size(100vw, 100vh);
+    @include size(100vw, var(--app-height));
     font-family: 'Roboto Mono', monospace;
     min-height: 550px;
 }

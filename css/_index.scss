@@ -257,10 +257,6 @@
                         color: #fff;
 
                         @include responsive(mobile){
-                            font-size: 3.5rem;
-                        }
-
-                        @include responsive(miniMobile){
                             font-size: 3rem;
                         }
                     }
@@ -362,10 +358,6 @@
                         color: #fff;
 
                         @include responsive(mobile){
-                            font-size: 3.5rem;
-                        }
-
-                        @include responsive(miniMobile){
                             font-size: 3rem;
                         }
                     }

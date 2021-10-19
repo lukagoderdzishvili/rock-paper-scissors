@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <title>Rock-Paper-Scissors</title>
+</head>
+<body ng-controller="myController" ng-cloak>
+  <div class="main">
+    <div class="container">
+      <div class="main__header">
+        <div class="main__header__content">
+          <div class="main__header__content__logo">
+            <img src="images/logo.svg" alt="Logo" class="main__header__content__logo__img" />
+          </div>
+          <div class="main__header__content__score">
+            <div class="main__header__content__score__title">
+              <p class="main__header__content__score__title__text">
+                SCORE
+              </p>
+            </div>
+            <div class="main__header__content__score__number">
+              <p class="main__header__content__score__number__text">
+                {{myScore}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__content" ng-class="{'result' : gameIsStarted}">
+        <div class="main__content__choose" ng-hide="gameIsStarted">
+          <div class="main__content__choose__group">
+            <div class="main__content__choose__group__item"
+                 ng-repeat="item in gameItems"
+                 ng-class="{'paper' : item.name === 'paper', 'scissors' : item.name === 'scissors', 'rock' : item.name === 'rock'}"
+                 ng-click="choosedItem($index)">
+              <img src="images/{{item.photo}}" alt="{{item.name}}" class="main__content__choose__group__item__img" />
+            </div>
+          </div>
+        </div>
+        <div class="main__content__result" ng-show="gameIsStarted">
+          <div class="main__content__result__player animate__animated" >
+            <div class="main__content__result__player__message">
+              <p class="main__content__result__player__message__text">
+                YOU PICKED
+              </p>
+            </div>
+            <div class="main__content__result__player__choosedItem {{playerChoosedItem.name}} animate__animated animate__pulse" ng-class="{'crown' : playerWin === true}">
+              <img src="images/{{playerChoosedItem.photo}}" alt="{{playerChoosedItem}}" class="main__content__result__player__choosedItem__img" />
+            </div>
+          </div>
+          <div class="main__content__result__info">
+            <div class="main__content__result__info__notification">
+              <p class="main__content__result__info__notification__text" ng-hide="playerWin === -1">
+                YOU {{playerWin ? "WIN!" : "LOSE!"}}
+              </p>
+              <p class="main__content__result__info__notification__text" ng-show="playerWin === -1">
+                Tie Score
+              </p>
+            </div>
+            <div class="main__content__result__info__playAgain">
+              <button class="main__content__result__info__playAgain__button" ng-click="playAgain()">
+                Play Again
+              </button>
+            </div>
+          </div>
+          <div class="main__content__result__house animate__animated">
+            <div class="main__content__result__house__message">
+              <p class="main__content__result__house__message__text">
+                THE HOUSE PICKED
+              </p>
+            </div>
+            <div class="main__content__result__house__choosedItem {{houseChoosedItem.name}} animate__animated animate__pulse" ng-class="{'crown' : playerWin === false}">
+              <img src="images/{{houseChoosedItem.photo}}" alt="{{houseChoosedItem.name}}" class="main__content__result__house__choosedItem__img" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__footer">
+        <div class="container">
+          <div class="main__footer__rules" ng-click="rulesModal = true">
+            <p class="main__footer__rules__text">
+              RULES
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rulesModal" ng-show="rulesModal" >
+    <div class="rulesModal__content animate__animated animate__zoomIn">
+      <div class="rulesModal__content__header">
+        <h1 class="rulesModal__content__header__text">
+          RULES
+        </h1>
+        <img src="images/icon-close.svg" alt="CLOSE" class="rulesModal__content__header__close" ng-click="rulesModal = false" />
+      </div>
+      <div class="rulesModal__content__body">
+        <img src="images/image-rules.svg" alt="RULES" class="rulesModal__content__body__img" />
+      </div>
+    </div>
+  </div>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

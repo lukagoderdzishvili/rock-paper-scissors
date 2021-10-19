@@ -882,6 +882,83 @@ body {
   min-height: 550px;
 }
 
+.rotateDevice {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: auto;
+  right: auto;
+  bottom: 0;
+  height: var(--app-height);
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.rotateDevice__phone {
+  height: 50px;
+  width: 100px;
+  border: 3px solid #FFF;
+  border-radius: 10px;
+  -webkit-animation: rotate 1.5s ease-in-out infinite alternate;
+          animation: rotate 1.5s ease-in-out infinite alternate;
+}
+
+.rotateDevice__message {
+  color: #FFF;
+  font-size: 1em;
+  margin-top: 40px;
+}
+
+@media only screen and (max-device-width: 768px) and (orientation: landscape) {
+  .rotateDevice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0;
+  }
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }

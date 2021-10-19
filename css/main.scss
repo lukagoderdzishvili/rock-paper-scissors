@@ -1,0 +1,40 @@
+@import 'config';
+@import 'reset';
+@import 'responsive';
+@import 'index';
+@import 'rulesModal';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+*{
+    user-select: none;
+}
+
+html{
+    font-size: 10px;
+
+    @include responsive(miniLaptop){
+        font-size: 8px;
+    }
+
+    @include responsive(extraTablet){
+        font-size: 6px;
+    }
+
+    @include responsive(talbet){
+        font-size: 5px;
+    }
+
+    @include responsive(mobile){
+        font-size: 4px;
+    }
+}
+
+body{
+    @include size(100vw, 100vh);
+    font-family: 'Roboto Mono', monospace;
+    min-height: 550px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+  }

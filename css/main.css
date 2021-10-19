@@ -508,7 +508,7 @@ table {
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 440px) {
   .main__content__result__player__choosedItem {
     height: 90px;
     width: 90px;
@@ -684,7 +684,7 @@ table {
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 440px) {
   .main__content__result__house__choosedItem {
     height: 90px;
     width: 90px;
@@ -805,7 +805,7 @@ table {
   padding: 30px;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 440px) {
   .rulesModal__content {
     width: 80%;
   }

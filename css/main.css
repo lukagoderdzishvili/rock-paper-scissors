@@ -474,12 +474,6 @@ table {
 
 @media only screen and (max-width: 550px) {
   .main__content__result__player__message__text {
-    font-size: 3.5rem;
-  }
-}
-
-@media only screen and (max-width: 420px) {
-  .main__content__result__player__message__text {
     font-size: 3rem;
   }
 }
@@ -655,12 +649,6 @@ table {
 }
 
 @media only screen and (max-width: 550px) {
-  .main__content__result__house__message__text {
-    font-size: 3.5rem;
-  }
-}
-
-@media only screen and (max-width: 420px) {
   .main__content__result__house__message__text {
     font-size: 3rem;
   }
@@ -854,6 +842,10 @@ table {
   width: 100%;
 }
 
+:root {
+  --app-height: 100%;
+}
+
 * {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -884,7 +876,7 @@ html {
 }
 
 body {
-  height: 100vh;
+  height: var(--app-height);
   width: 100vw;
   font-family: 'Roboto Mono', monospace;
   min-height: 550px;

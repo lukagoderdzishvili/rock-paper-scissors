@@ -16,7 +16,7 @@
     };
 
     @if $breakpoint == miniMobile{
-        @media only screen and (max-width: 420px) { @content }
+        @media only screen and (max-width: 440px) { @content }
     };
 
     @if $breakpoint == oldMiniDevices{

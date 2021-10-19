@@ -6,6 +6,14 @@ myApp.controller('myController', ['$scope', function($scope) {
   $scope.myScore = 0;
 
   $scope.rulesModal = false;
+
+  const appHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+  }
+
+  window.addEventListener('resize', appHeight);
+  appHeight();
   
   $scope.gameItems = [
     {
